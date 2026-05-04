@@ -1,1 +1,32 @@
+# AI Decision Layer
+
+This folder contains the files related to the AI decision-making part of the Robotics AI project.
+
+The AI decision layer is responsible for converting simulated gas or leak-risk values into mission-level decisions for the drone. Instead of only moving the drone with fixed commands, this layer adds decision logic so that the drone can respond differently based on the risk level.
+
+## Purpose of This Folder
+
+The main purpose of this folder is to show how sensor-like risk information can be used to control the behavior of the drone.
+
+In this project, the leak-risk values are simulated. These values represent possible gas leak intensity or environmental risk. The decision node reads the risk value and selects the correct mission state for the drone.
+
+## Mission States
+
+The AI decision layer uses three main mission states:
+
+- `SEARCH`
+- `INVESTIGATE`
+- `CONFIRM_HOVER`
+
+### `SEARCH`
+
+The drone stays in the search state when the risk value is low. This means the drone continues normal scanning or patrol behavior.
+
+### `INVESTIGATE`
+
+The drone switches to the investigate state when the risk value becomes moderate. This means the drone should move closer to the suspected risk area.
+
+### `CONFIRM_HOVER`
+
+The drone enters the confirm-hover state when the risk value becomes high. This means the drone should hold position near the high-risk area to confirm the possible gas leak.
 
