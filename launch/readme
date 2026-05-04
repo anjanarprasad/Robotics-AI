@@ -1,7 +1,7 @@
 # Launch Folder
 
-This folder is intended to support the execution of the Robotics AI pipeline.
-The launch files included with the package provide functionality to bring up essential parts of the system, such as ROS 2 nodes, simulation nodes, localization, and control-related modules. This allows testing of the complete system as a coherent workflow.
+This folder is for the  the execution of the Robotics AI pipeline.
+This allows testing of the complete system(ROS 2 nodes, simulation nodes, localization, and control-related modules) as a consistent workflow.
 
 ## Why Launch Files Are Important
 Launch files are useful because robotics systems usually depend on many nodes running at the same time.
@@ -23,7 +23,7 @@ Running these nodes separately can be complicated and confusing. So, the launch 
 
 These scripts make the process of running, testing, and demonstrating the project easier.
 
-The launch files in this codebase serve to link the simulator, ROS 2 communication, decision logic, and PX4 flight control together.
+The launch files in this folder  connects the simulator, ROS 2 communication, decision logic, and PX4 flight control together.
 
 
 
