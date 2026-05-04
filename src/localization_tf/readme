@@ -1,14 +1,14 @@
 # Localization and TF
 
-This folder contains the files related to localization and transform frame handling for the Robotics AI project.
+These are the files associated with localization and transform frame handling for the Robotics AI project.
 
-Localization is important because the drone needs to know its position and movement inside the simulated environment. In this project, pose information from Gazebo is used to create ROS 2 odometry and TF data. This helps the rest of the system understand where the drone is located.
+In order to simulate a drone inside a controlled environment, we need to localize the drone inside that environment, i.e., understand where it is located and how it is moving. In this project, we use Gazebo to simulate a 3D environment and get the drone’s pose. We then use this information to publish ROS 2 odometry messages and TF messages throughout the simulation, which allows the rest of the codebase to track the drone’s pose.
 
 ## Purpose of This Folder
 
-The main purpose of this folder is to support the localization part of the drone simulation.
+This directory provides support for localization within the drone simulation.
 
-The Gazebo simulator provides pose information for the drone. This pose data is then converted into ROS 2-compatible odometry and transform frames. These frames allow other parts of the system, such as SLAM and control, to use the drone position correctly.
+In the Gazebo simulator, the drone pose is provided as part of the simulation. This information is used to generate odometry messages for SLAM and transform messages, which are ROS 2 frames that other components of the system use to refer to the drone’s position.
 
 ## Main Functionality
 
@@ -17,17 +17,17 @@ This folder focuses on:
 - reading pose data from the simulator,
 - converting pose data into odometry information,
 - publishing transform frames,
-- connecting the drone position with ROS 2 localization,
+- connecting sensor data with the correct drone frame,
 - supporting SLAM and mapping.
 
 ## Important Frames
 
-The main TF frames used in this project are:
+The main TF frames used in this project are basic ROS 2 transform frames that describe the spatial relationship between the drone, odometry, and sensor frames.
 
 - `odom`
 - `base_link`
 - `link`
 
-The localization node helps connect these frames so that the drone pose can be tracked properly.
+The localization node aims to track the drone frames and publish its pose correctly.
 
 
