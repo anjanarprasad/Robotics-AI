@@ -1,12 +1,12 @@
 # TF Monitoring
 
-This folder contains the files and commands related to TF monitoring and transform validation in the Robotics AI project.
+These are the files and commands for TF monitoring and transform validation in the Robotics AI project.
 
-In ROS 2, TF is used to describe the relationship between different coordinate frames in the robot system. These frames help the system understand where the drone is located and how each part of the drone or environment is connected.
+In ROS 2, TF is used to describe the relationship between coordinate frames in a robot system. These frames are used to define the drone's position and the relationships between the drone, sensors, and other structures in the environment.
 
 ## Purpose of This Folder
 
-The main purpose of this folder is to verify that the required transform frames are being published correctly.
+This folder exists to test whether the required transform frames are being published correctly.
 
 For this project, the important TF frames include:
 
@@ -15,22 +15,22 @@ For this project, the important TF frames include:
 - `base_link`
 - `link`
 
-These frames are used by localization, SLAM, and drone control components. If the TF frames are missing or incorrect, the system may not be able to understand the drone position properly.
+Localization, SLAM, and drone control all use these frames. If TF frames, including their names or positions, are wrong, the system may not understand the drone's position correctly.
 
 ## Why TF Monitoring Is Important
 
-TF monitoring is important because many robotics components depend on correct coordinate frame relationships.
+Monitoring the TFs is important because many robotics components depend on correct coordinate frame relationships.
 
 For example:
 
-- SLAM needs transform data to connect map, odometry, and sensor information.
-- Localization needs TF frames to track the drone position.
-- The drone body frame must be connected correctly to the odometry frame.
-- Sensor data must be interpreted in the correct coordinate frame.
+- SLAM requires transform information to align the map, odometry information, and sensor data.
+- Localization requires drone position tracking using TF frames.
+- The body frame of the drone has to be attached to the odometry frame correctly.
+- Sensor data needs to be correctly referenced to the appropriate coordinate frame.
 
-This means TF validation is a key step before running the full robotics AI pipeline.
+This means TF validation is a key step before running the full Robotics AI pipeline.
 
 ## Role in the Project
 
-This folder supports the project by helping check whether the transform tree is working correctly.
+This directory supports the project by ensuring that the transform tree is correctly published and validated.
 
