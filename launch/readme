@@ -30,7 +30,3 @@ This folder supports the project by making the system easier to run, test, and d
 
 The launch files help connect the different parts of the pipeline, including simulation, ROS 2 communication, AI decision logic, and PX4 control.
 
-The overall workflow can be understood as:
-
-```text
-Launch File → Start Required Nodes → Connect ROS 2 Pipeline → Run Robotics AI System
