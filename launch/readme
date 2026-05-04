@@ -1,1 +1,36 @@
+# Launch Folder
 
+This folder contains the launch files used for the Robotics AI project.
+
+In ROS 2, launch files are used to start multiple nodes or system components together. Instead of running every node manually in separate terminals, a launch file helps start the required parts of the project in a more organized way.
+
+## Purpose of This Folder
+
+The main purpose of this folder is to support the execution of the robotics AI pipeline.
+
+The launch files help bring up important components such as ROS 2 nodes, simulation-related nodes, localization support, and control-related modules. This makes it easier to test the system as one connected workflow.
+
+## Why Launch Files Are Important
+
+Launch files are useful because robotics systems usually depend on many nodes running at the same time.
+
+For example, this project includes different parts such as:
+
+- ROS 2 communication nodes,
+- localization and TF nodes,
+- AI decision-making nodes,
+- PX4 control nodes,
+- and simulation bridge-related components.
+
+Running these separately can become difficult and confusing. Launch files help manage this process by starting the required nodes together.
+
+## Role in the Project
+
+This folder supports the project by making the system easier to run, test, and demonstrate.
+
+The launch files help connect the different parts of the pipeline, including simulation, ROS 2 communication, AI decision logic, and PX4 control.
+
+The overall workflow can be understood as:
+
+```text
+Launch File → Start Required Nodes → Connect ROS 2 Pipeline → Run Robotics AI System
