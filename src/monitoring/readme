@@ -1,1 +1,36 @@
+# TF Monitoring
+
+This folder contains the files and commands related to TF monitoring and transform validation in the Robotics AI project.
+
+In ROS 2, TF is used to describe the relationship between different coordinate frames in the robot system. These frames help the system understand where the drone is located and how each part of the drone or environment is connected.
+
+## Purpose of This Folder
+
+The main purpose of this folder is to verify that the required transform frames are being published correctly.
+
+For this project, the important TF frames include:
+
+- `map`
+- `odom`
+- `base_link`
+- `link`
+
+These frames are used by localization, SLAM, and drone control components. If the TF frames are missing or incorrect, the system may not be able to understand the drone position properly.
+
+## Why TF Monitoring Is Important
+
+TF monitoring is important because many robotics components depend on correct coordinate frame relationships.
+
+For example:
+
+- SLAM needs transform data to connect map, odometry, and sensor information.
+- Localization needs TF frames to track the drone position.
+- The drone body frame must be connected correctly to the odometry frame.
+- Sensor data must be interpreted in the correct coordinate frame.
+
+This means TF validation is a key step before running the full robotics AI pipeline.
+
+## Role in the Project
+
+This folder supports the project by helping check whether the transform tree is working correctly.
 
