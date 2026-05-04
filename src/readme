@@ -1,8 +1,8 @@
 # Source Folder
 
-Here you will find the source code for the main program for the Robotics AI project, as well as for the rest of the modules.
+This has the source code for the main program for the Robotics AI project, as well as for the rest of the modules.
 
-The code is split up based on the robotics process: AI Decision Layer, Localization, TF Monitoring, PX4 Control, and ROS 2 Basic Nodes. All folders have a corresponding text explaining the functions of that part of the code.
+The code is split up based on the robotics process: AI Decision Layer, Localization, TF Monitoring, PX4 Control, and ROS 2 Basic Nodes. All folders have a corresponding readme/text  file explaining the functions of that part of the code.
 
 ## Folder Structure
 
@@ -26,16 +26,16 @@ This project takes the pose information from Gazebo and converts it into ROS 2 o
 
 ### TF Monitoring
 
-This folder contains files for monitoring and validation of transform frames.
+This folder contains files for monitoring and validation of the transform frames.
 
 TF frames are used throughout ROS 2 to describe the relationship between different coordinate frames.
 
-- `map`
-- `odom`
-- `base_link`
-- `link`
+- map
+- odom
+- base_link
+- link
 
-From the above frames, you can confirm the proper alignment between localization, SLAM information, and the drone body.
+This can  confirm the proper alignment between localization, SLAM information, and the drone body.
 
 ### PX4 Control
 
@@ -51,8 +51,4 @@ This package contains simple ROS 2 publisher and subscriber examples to test and
 
 This section shows how to use topics, publishers, and subscribers to connect different parts of the system.
 
-## Purpose of This Folder
 
-This is the `src/` folder for the project, where the implementation code lives. This includes ROS 2 communication, localization, AI decision code, and PX4 control integration, overall forming the Robotics AI pipeline.
-
-This folder contains the development of the drone system as individual parts and then shows the simulation of the drone reacting to simulated gas leak-risk values by linking all of the parts together.
