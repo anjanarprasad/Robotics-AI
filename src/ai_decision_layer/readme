@@ -1,32 +1,30 @@
 # AI Decision Layer
 
-These files relate to the folder for the “AI Decision-Making” component of the Robotics AI project.
-
-In this layer, we take the simulated gas or leak-risk values and use them to inform mission-level decisions for the drone. Instead of simply issuing a series of static commands to move the drone around, we embed decision logic so that the drone’s actions vary depending on the risk levels.
+In this layer,  the simulated gas or leak-risk values are taken and use them to inform mission-level decisions for the drone. Instead of simply issuing a series of static commands to move the drone around, a rule based decision logic is added so that the drone’s actions vary depending on the risk levels.
 
 ## Purpose of This Folder
 
 This folder shows how to use sensor-like information related to risk in order to control the drone.
 
-Leak-risk values are simulated in this project. These values represent gas leak intensity or environmental risk. The decision node reads the risk value and selects the appropriate mission state for the drone.
+Leak-risk values are simulated in this project. These values represent the gas leak intensity or environmental risk. The decision node reads the risk value and selects the appropriate mission state for the drone.
 
 ## Mission States
 
 The AI decision layer follows three main mission states.
 
-- `SEARCH`
-- `INVESTIGATE`
-- `CONFIRM_HOVER`
+- SEARCH
+- INVESTIGATE
+- CONFIRM_HOVER
 
-### `SEARCH`
+### SEARCH
 
 When the risk value is low, the drone remains in the search state. This means the drone will continue its normal activity, such as scanning around or patrolling.
 
-### `INVESTIGATE`
+### INVESTIGATE
 
 Once a moderate risk value has been detected, the drone enters the investigate state. At this point, it moves toward the area where the risk value was detected and stays at a moderate distance to investigate the area.
 
-### `CONFIRM_HOVER`
+### CONFIRM_HOVER
 
-Once a high-risk value is detected, the drone transitions to the `CONFIRM_HOVER` state to hover and hold its position to confirm the possible gas leak in that high-risk area.
+Once a high-risk value is detected, the drone transitions to the CONFIRM_HOVER state to hover and hold its position to confirm the possible gas leak in that high-risk area.
 
