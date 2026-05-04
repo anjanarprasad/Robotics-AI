@@ -1,1 +1,33 @@
+# ROS 2 Basic Nodes
 
+This folder contains the basic ROS 2 publisher and subscriber nodes used in the Robotics AI project.
+
+These files were created to understand and test how communication works in ROS 2. Before connecting the full drone simulation, AI decision layer, localization, and PX4 control, it was important to first verify that simple ROS 2 nodes could publish and receive messages correctly.
+
+## Purpose of This Folder
+
+The main purpose of this folder is to show the foundation of ROS 2 communication.
+
+ROS 2 works using nodes, topics, publishers, and subscribers. A publisher sends data to a topic, and a subscriber listens to that topic and receives the data. This communication pattern is used throughout the full robotics AI pipeline.
+
+In this project, the same basic idea is later extended to more advanced components such as:
+
+- leak-risk publishing,
+- mission-state publishing,
+- odometry and TF data,
+- LiDAR scan data,
+- and PX4 command topics.
+
+## Why This Is Important
+
+The basic ROS 2 nodes helped verify that the ROS 2 workspace was working correctly and that messages could be exchanged between nodes.
+
+This step was important before moving to more complex robotics components because the entire project depends on reliable communication between different modules.
+
+For example, the AI decision layer and PX4 control layer also follow the same publisher-subscriber idea. The only difference is that they use project-specific topics and message types.
+
+## Role in the Project
+
+This folder represents the starting point of the ROS 2 development work. It helped build confidence in the communication structure before integrating the drone simulation, localization, SLAM, and AI-based mission control.
+
+Overall, these basic nodes support the project by demonstrating the core ROS 2 communication concept used throughout the Robotics AI system.
