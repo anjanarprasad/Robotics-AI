@@ -1,56 +1,58 @@
 # Source Folder
 
-This folder contains the main source files and module-level components for the Robotics AI project.
+Here you can find the source files for the main program and the rest of the Robotics AI project modules.
 
-The source code is organized into separate folders based on the role of each part in the robotics pipeline. This makes the project easier to understand, maintain, and extend. Each subfolder focuses on one part of the system, such as AI decision-making, localization, TF monitoring, PX4 control, or basic ROS 2 communication.
+The source code is separated based on each part of the robotics process. This organization makes the project easier to understand, maintain, and extend. Each folder has a corresponding write-up explaining the role of that part of the code. The folders are “AI Decision Layer,” “Localization,” “TF Monitoring,” “PX4 Control,” and “ROS 2 Basic Nodes.”
 
 ## Folder Structure
 
 ### AI Decision Layer
 
-This folder contains the source files related to the AI-based decision logic of the project. In this project, simulated gas or leak-risk values are used to decide the drone mission state.
+This folder contains the source files for the AI-based decision logic inside the project. In this project, the simulated gas or leak-risk values are used to decide the state of the drone mission.
 
-The decision logic converts risk values into mission-level states such as:
+The decision logic processes the risk values to determine a particular mission state from those listed below.
 
 - `SEARCH`
 - `INVESTIGATE`
 - `CONFIRM_HOVER`
 
-These states are then used by the control layer to decide how the drone should move.
+These states are used in the control layer to decide how the drone should move.
 
 ### Localization
 
-This folder contains the source files related to localization and odometry. Localization helps the drone understand its position and movement inside the simulated environment.
+This folder contains code for localization and odometry. This includes how the drone simulation tracks the drone's displacement within a simulated environment, and how different sources of data are used to determine drone localization.
 
-In this project, pose information from Gazebo is converted into ROS 2 odometry and transform data so that other parts of the system can use the drone position correctly.
+This project converts the pose information obtained from Gazebo into ROS 2 odometry and transform messages so that other parts of the program can know where the drone is located.
 
 ### TF Monitoring
 
-This folder contains files related to transform frame monitoring and validation.
+This folder contains files related to monitoring and validating transform frames.
 
-TF frames are important in ROS 2 because they describe the relationship between different coordinate frames such as:
+TF frames are used throughout ROS 2 to describe the relationship between different coordinate frames.
 
 - `map`
 - `odom`
 - `base_link`
 - `link`
 
-Monitoring these frames helps verify whether the localization, SLAM, and drone body frames are connected correctly.
+By inspecting these frames, one can confirm proper alignment between the localization, SLAM information, and the drone body.
 
 ### PX4 Control
 
-This folder contains the source files related to PX4 offboard control.
+This folder contains the source code for PX4 offboard control.
 
-The PX4 control layer receives mission-level decisions and converts them into drone movement commands. It publishes commands and setpoints to PX4 topics so that the drone can move according to the selected mission state.
+The PX4 control layer receives the mission decisions and uses them to control the drone. It publishes commands and setpoints to the PX4 topics to move the drone according to the current mission state.
 
 ### ROS2 Basic Nodes
 
-This folder contains basic ROS 2 publisher and subscriber examples used to understand and test ROS 2 communication.
+# ROS 2 Publisher and Subscriber Examples
 
-These nodes help demonstrate how different parts of the system communicate using topics, publishers, and subscribers.
+Basic ROS 2 publisher and subscriber examples are included to test and understand ROS 2 communication.
+
+These nodes show how to use topics, publishers, and subscribers to interconnect the different parts of the system.
 
 ## Purpose of This Folder
 
-The `src/` folder represents the implementation side of the project. It connects the simulation environment, ROS 2 communication, localization, AI decision-making, and PX4 control into one robotics AI pipeline.
+We define the `src/` folder as the implementation side of the project. It connects the simulation, ROS 2 communication, localization, AI decision logic, and PX4 control together to form a single Robotics AI pipeline.
 
-Overall, this folder shows how the drone system was developed in separate modules and then connected together to support autonomous gas leak detection behavior in simulation.
+This folder shows the development of the drone system in individual modules and the subsequent linking of those modules together to create a simulation where the drone can respond to simulated gas leak-risk values.
