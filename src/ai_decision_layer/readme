@@ -1,18 +1,18 @@
 # AI Decision Layer
 
-This folder contains the files related to the AI decision-making part of the Robotics AI project.
+These files relate to the folder for the “AI Decision-Making” component of the Robotics AI project.
 
-The AI decision layer is responsible for converting simulated gas or leak-risk values into mission-level decisions for the drone. Instead of only moving the drone with fixed commands, this layer adds decision logic so that the drone can respond differently based on the risk level.
+In this layer, we take the simulated gas or leak-risk values and use them to inform mission-level decisions for the drone. Instead of simply issuing a series of static commands to move the drone around, we embed decision logic so that the drone’s actions vary depending on the risk levels.
 
 ## Purpose of This Folder
 
-The main purpose of this folder is to show how sensor-like risk information can be used to control the behavior of the drone.
+This folder shows how to use sensor-like information related to risk in order to control the drone.
 
-In this project, the leak-risk values are simulated. These values represent possible gas leak intensity or environmental risk. The decision node reads the risk value and selects the correct mission state for the drone.
+Leak-risk values are simulated in this project. These values represent gas leak intensity or environmental risk. The decision node reads the risk value and selects the appropriate mission state for the drone.
 
 ## Mission States
 
-The AI decision layer uses three main mission states:
+The AI decision layer follows three main mission states.
 
 - `SEARCH`
 - `INVESTIGATE`
@@ -20,13 +20,13 @@ The AI decision layer uses three main mission states:
 
 ### `SEARCH`
 
-The drone stays in the search state when the risk value is low. This means the drone continues normal scanning or patrol behavior.
+When the risk value is low, the drone remains in the search state. This means the drone will continue its normal activity, such as scanning around or patrolling.
 
 ### `INVESTIGATE`
 
-The drone switches to the investigate state when the risk value becomes moderate. This means the drone should move closer to the suspected risk area.
+Once a moderate risk value has been detected, the drone enters the investigate state. At this point, it moves toward the area where the risk value was detected and stays at a moderate distance to investigate the area.
 
 ### `CONFIRM_HOVER`
 
-The drone enters the confirm-hover state when the risk value becomes high. This means the drone should hold position near the high-risk area to confirm the possible gas leak.
+Once a high-risk value is detected, the drone transitions to the `CONFIRM_HOVER` state to hover and hold its position to confirm the possible gas leak in that high-risk area.
 
