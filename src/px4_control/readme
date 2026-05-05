@@ -10,19 +10,15 @@ The main purpose of this folder is to connect the AI decision output with the dr
 
 In this project, the AI decision layer generates mission states such as:
 
-- `SEARCH`
-- `INVESTIGATE`
-- `CONFIRM_HOVER`
+- SEARCH
+- INVESTIGATE
+- CONFIRM_HOVER
 
 The PX4 control node uses these mission states and converts them into drone position setpoints. These setpoints are then published to PX4 command topics so that the drone can move according to the selected mission state.
 
 ## Main Functionality
 
-The PX4 control layer publishes commands to topics such as:
-
-- `/fmu/in/offboard_control_mode`
-- `/fmu/in/trajectory_setpoint`
-- `/fmu/in/vehicle_command`
+The PX4 control layer communicates with PX4 through offboard control topics. These messages tell the simulated drone when to enter offboard mode, where to move, and how to behave during the mission.
 
 These topics are used to enable offboard control mode, send trajectory setpoints, and provide vehicle commands to the simulated drone.
 
@@ -34,7 +30,4 @@ Without this layer, the AI decision module would only produce mission states, bu
 
 This folder helps demonstrate how high-level robotics decisions can be converted into low-level flight control commands.
 
-## Role in the Project
-
-This folder represents the control part of the robotics AI pipeline.
 
