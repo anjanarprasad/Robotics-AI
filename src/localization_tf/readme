@@ -2,7 +2,7 @@
 
 These are the files associated with localization and transform frame handling for the Robotics AI project.
 
-In order to simulate a drone inside a controlled environment, we need to localize the drone inside that environment, i.e., understand where it is located and how it is moving. In this project, we use Gazebo to simulate a 3D environment and get the drone’s pose. We then use this information to publish ROS 2 odometry messages and TF messages throughout the simulation, which allows the rest of the codebase to track the drone’s pose.
+In order to simulate a drone inside a controlled environment, the drone is to be localized inside that environment, i.e., understand where it is located and how it is moving. In this project, Gazebo is used to simulate a 3D environment and get the drone’s pose.This information is then used to publish ROS 2 odometry messages and TF messages throughout the simulation, which allows the rest of the codebase to track the drone’s pose.
 
 ## Purpose of This Folder
 
@@ -24,9 +24,9 @@ This folder focuses on:
 
 The main TF frames used in this project are basic ROS 2 transform frames that describe the spatial relationship between the drone, odometry, and sensor frames.
 
-- `odom`
-- `base_link`
-- `link`
+- odom
+- base_link
+- link
 
 The localization node aims to track the drone frames and publish its pose correctly.
 
