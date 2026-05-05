@@ -10,10 +10,10 @@ This folder exists to test whether the required transform frames are being publi
 
 For this project, the important TF frames include:
 
-- `map`
-- `odom`
-- `base_link`
-- `link`
+- map
+- odom
+- base_link
+- link
 
 Localization, SLAM, and drone control all use these frames. If TF frames, including their names or positions, are wrong, the system may not understand the drone's position correctly.
 
@@ -29,8 +29,4 @@ For example:
 - Sensor data needs to be correctly referenced to the appropriate coordinate frame.
 
 This means TF validation is a key step before running the full Robotics AI pipeline.
-
-## Role in the Project
-
-This directory supports the project by ensuring that the transform tree is correctly published and validated.
 
